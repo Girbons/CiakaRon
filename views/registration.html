@@ -8,7 +8,7 @@
                 <div class="panel panel-body">
                     <form name="registrationForm" novalidate>
                         <div class="col-md-12">
-                            <label for="InputUsername">Nome</label>
+                            <label for="InputUsername">Username</label>
                             <div class="input-group" ng-class="registrationForm.username.$error.required ? 'has-error' : 'has-success'">
                                 <input type="text" class="form-control" name="username" id="InputUsername" placeholder="Inserisci l'Username" required ng-model="newUser.username">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
@@ -19,7 +19,7 @@
                             <label for="InputFirstName">Nome</label>
                             <div class="input-group" ng-class="registrationForm.firstName.$error.required ? 'has-error' : 'has-success'">
                                 <input type="text" class="form-control" name="firstName" id="InputFirstName" placeholder="Inserisci il Nome" required ng-model="newUser.firstName">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                             </div>
                             <br/>
                         </div>
@@ -27,7 +27,7 @@
                             <label for="InputLastName">Cognome</label>
                             <div class="input-group" ng-class="registrationForm.lastName.$error.required ? 'has-error' : 'has-success'">
                                 <input type="text" class="form-control" name="lastName" id="InputLastName" placeholder="Inserisci il Cognome" required ng-model="newUser.lastName">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                             </div>
                             <br/>
                         </div>
@@ -35,7 +35,7 @@
                             <label for="InputPassword">Password</label>
                             <div class="input-group" ng-class="registrationForm.password.$error.required ? 'has-error' : 'has-success'">
                                 <input type="password" class="form-control" name="password" id="InputPassword" placeholder="Inserisci il Password" required ng-model="newUser.password">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                             </div>
                             <br/>
                         </div>
@@ -45,6 +45,11 @@
                                 <input type="text" class="form-control" name="birthdate" id="InputBirthdate" placeholder="Inserisci la Data di Nascita" required ng-model="newUser.birthdate">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="text-center">{{user.registrationMessage.message}}</div>
                             <br/>
                             <br/>
                         </div>

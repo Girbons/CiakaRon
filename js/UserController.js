@@ -6,8 +6,8 @@ angular.module("UserMdl", [])
 
             vm.user = {};
 
-            vm.login = function (user) {
-                $http.post("/DigiDay/php/router.php/user/login", {user: user})
+            vm.getUser = function () {
+                $http.get("php/user.php")
                         .success(function (data, status, headers, config) {
                             if (data.error) {
                                 console.log(data);
@@ -19,13 +19,30 @@ angular.module("UserMdl", [])
                             console.log(data);
                         });
             };
+            vm.getUser();
 
-            vm.logout = function () {
-                $http.get("/DigiDay/php/router.php/user/logout")
+            vm.login = function (user) {
+                $http.post("php/login.php", {user: user})
                         .success(function (data, status, headers, config) {
                             if (data.error) {
                                 console.log(data);
                             } else {
+                                console.log(data);
+                                vm.getUser();
+                            }
+                        })
+                        .error(function (data, status, headers, config) {
+                            console.log(data);
+                        });
+            };
+
+            vm.logout = function () {
+                $http.get("php/logout.php")
+                        .success(function (data, status, headers, config) {
+                            if (data.error) {
+                                console.log(data);
+                            } else {
+                                console.log(data);
                                 vm.user = {};
                             }
                         })
@@ -42,6 +59,7 @@ angular.module("UserMdl", [])
                                 console.log(data);
                             } else {
                                 console.log(user);
+                                vm.registrationMessage = data;
                             }
                         })
                         .error(function (data, status, headers, config) {
