@@ -1,4 +1,4 @@
-angular.module("Ciakaron", ["UserMdl"])
+angular.module("CiakaronMdl", ["ngRoute", "UserMdl"])
 
         .config(["$routeProvider", function ($routeProvider) {
 
