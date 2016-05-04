@@ -8,5 +8,8 @@ angular.module("CiakaronMdl", ["ngRoute", "UserMdl"])
                 $routeProvider.when("/registrati", {
                     templateUrl: "views/registration.html"
                 });
+                $routeProvider.when("/login", {
+                    templateUrl: "views/login.html"
+                });
 
             }]);
