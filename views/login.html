@@ -1,35 +1,34 @@
 <div class="row" ng-controller="UserCtrl as user">
-
     <div class="col-xs-6 col-xs-offset-3">
-      <div class="panel" ng-class="registrationForm.name.$error.required || registrationForm.password.$error.required ? 'panel-info' : 'panel-success'">
-        <div class="panel-heading">
-          Inserisci le tue credenziali
+        <div class="panel" ng-class="registrationForm.name.$error.required || registrationForm.password.$error.required ? 'panel-info' : 'panel-success'">
+            <div class="panel-heading">
+                Inserisci le tue credenziali
+            </div>
+            <div class="panel-body">
+                <form name="registrationForm" novalidate>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="InputName">Username</label>
+                            <div class="input-group" ng-class="registrationForm.name.$error.required ? 'has-info' : 'has-success'">
+                                <input type="text" class="form-control" name="name" id="InputName" placeholder="Inserisci il Nome" required ng-model="user.name">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                            </div>
+
+                            <br>
+
+                            <label for="InputPassword">Password</label>
+                            <div class="input-group" ng-class="registrationForm.password.$error.required ? 'has-info' : 'has-success'">
+                                <input type="password" class="form-control" name="password" id="InputName" placeholder="Inserisci il Nome" required ng-model="user.password">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                            </div>
+                            <br>
+                            <div class="col-xs-6 col-xs-offset-3">
+                                <a href="#" class="btn btn-block" ng-click="user.login(user)" ng-class="registrationForm.name.$error.required || registrationForm.password.$error.required ? 'btn-info' : 'btn-success'">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="panel-body">
-          <form name="registrationForm" novalidate>
-              <div class="form-group">
-                  <div class="col-xs-12">
-                      <label for="InputName">Username</label>
-                      <div class="input-group" ng-class="registrationForm.name.$error.required ? 'has-info' : 'has-success'">
-                          <input type="text" class="form-control" name="name" id="InputName" placeholder="Inserisci il Nome" required ng-model="user.name">
-                          <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
-                      </div>
-
-                      <br>
-
-                      <label for="InputPassword">Password</label>
-                      <div class="input-group" ng-class="registrationForm.password.$error.required ? 'has-info' : 'has-success'">
-                          <input type="password" class="form-control" name="password" id="InputName" placeholder="Inserisci il Nome" required ng-model="user.password">
-                          <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
-                      </div>
-                      <br>
-                      <div class="col-xs-6 col-xs-offset-3">
-                      <a href="#" class="btn btn-block" ng-click="user.login(user)" ng-class="registrationForm.name.$error.required || registrationForm.password.$error.required ? 'btn-info' : 'btn-success'">Login</a>
-                      </div>
-                  </div>
-              </div>
-          </form>
-      </div>
-      </div>
-      </div>
+    </div>
 </div>

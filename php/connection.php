@@ -1,16 +1,19 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$credentials = array(
+    "dbname" => "ciakaron",
+    "host" => "127.0.0.1",
+    "password" => "",
+    "username" => "root"
+);
 
-/**
- * Description of connection
- *
- * @author Alex
- */
-class connection {
-    //put your code here
+try {
+    $mysql = new PDO("mysql:host=" . $credentials["host"] . ";dbname=" . $credentials["dbname"] . "", $credentials["username"], $credentials["password"]);
+    $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $exception) {
+    echo json_encode(array(
+        "error" => true,
+        "message" => $exception->getMessage()
+    ));
+    die();
 }

@@ -42,6 +42,7 @@ angular.module("UserMdl", [])
                                 console.log(data);
                             } else {
                                 console.log(user);
+                                vm.registrationMessage = data;
                             }
                         })
                         .error(function (data, status, headers, config) {
