@@ -36,7 +36,7 @@ angular.module("UserMdl", [])
 
             vm.registration = function (user) {
                 console.log(user);
-                $http.post("/DigiDay/php/router.php/user/create", {user: user})
+                $http.post("php/createUser.php", {user: user})
                         .success(function (data, status, headers, config) {
                             if (data.error) {
                                 console.log(data);
