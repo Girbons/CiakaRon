@@ -7,7 +7,7 @@ angular.module("UserMdl", [])
             vm.user = {};
 
             vm.login = function (user) {
-                $http.post("/DigiDay/php/router.php/user/login", {user: user})
+                $http.post("php/login.php", {user: user})
                         .success(function (data, status, headers, config) {
                             if (data.error) {
                                 console.log(data);

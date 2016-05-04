@@ -22,8 +22,8 @@
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
                             </div>
                             <br>
-                            <div class="col-xs-6 col-xs-offset-3">
-                                <a href="#" class="btn btn-block" ng-click="user.login(user)" ng-class="registrationForm.name.$error.required || registrationForm.password.$error.required ? 'btn-info' : 'btn-success'">Login</a>
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <button class="btn btn-block" ng-class="registrationForm.$invalid ? 'btn-info' : 'btn-success'" ng-click="user.login(user)" ng-disabled="registrationForm.$invalid">Accedi</button>
                             </div>
                         </div>
                     </div>
