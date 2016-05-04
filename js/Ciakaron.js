@@ -1,9 +1,9 @@
-angular.module("Ciakaron", [])
+angular.module("Ciakaron", ["UserMdl"])
 
         .config(["$routeProvider", function ($routeProvider) {
 
                 $routeProvider.when("/", {
-                    templateUrl: "views/calendar.html"
+                    templateUrl: "views/homepage.html"
                 });
 
             }]);
