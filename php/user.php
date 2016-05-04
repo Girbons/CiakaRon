@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if (isset($_SESSION["username"])) {
     echo json_encode(array(
         "error" => false,
@@ -7,7 +9,7 @@ if (isset($_SESSION["username"])) {
             "username" => $_SESSION["username"],
             "firstName" => $_SESSION["firstName"],
             "lastName" => $_SESSION["lastName"],
-            "birthdate" => $_SESSION["dataNascita"],
+            "birthdate" => $_SESSION["birthdate"],
         )
     ));
 } else {

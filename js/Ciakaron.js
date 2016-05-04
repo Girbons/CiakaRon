@@ -8,7 +8,7 @@ angular.module("CiakaronMdl", ["ngRoute", "UserMdl"])
                 $routeProvider.when("/registrati", {
                     templateUrl: "views/registration.html"
                 });
-                $routeProvider.when("/login", {
+                $routeProvider.when("/accedi", {
                     templateUrl: "views/login.html"
                 });
 

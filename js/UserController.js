@@ -1,6 +1,6 @@
 angular.module("UserMdl", [])
 
-        .controller("UserCtrl", function ($http, $scope) {
+        .controller("UserCtrl", function ($http) {
 
             var vm = this;
 
@@ -13,6 +13,10 @@ angular.module("UserMdl", [])
                                 console.log(data);
                             } else {
                                 console.log(data);
+                                vm.user.username = data.user.username;
+                                vm.user.firstName = data.user.firstName;
+                                vm.user.lastName = data.user.lastName;
+                                vm.user.birthdate = data.user.birthdate;
                             }
                         })
                         .error(function (data, status, headers, config) {
@@ -20,6 +24,14 @@ angular.module("UserMdl", [])
                         });
             };
             vm.getUser();
+
+            vm.isAuthenticated = function () {
+                if (vm.user != null) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
 
             vm.login = function (user) {
                 $http.post("php/login.php", {user: user})
@@ -30,6 +42,7 @@ angular.module("UserMdl", [])
                                 console.log(data);
                                 vm.getUser();
                             }
+                            vm.loginMessage = data.message;
                         })
                         .error(function (data, status, headers, config) {
                             console.log(data);
